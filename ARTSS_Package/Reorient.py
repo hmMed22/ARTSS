@@ -27,10 +27,9 @@ class Reorient:
         orientation_probabilities = self.model.predict(features)
         predicted_orientation = np.argmax(orientation_probabilities, axis=1)[0]
 
-        # Rotate the image based on the predicted orientation
-        rotated_image = self.rotate_image(image, predicted_orientation * 90)
+       
 
-        return rotated_image, predicted_orientation
+        return predicted_orientation
 
     def rotate_image(self, image, angle):
         # Calculate the necessary rotation to bring the image to the desired 90-degree orientation (fingers upward)
