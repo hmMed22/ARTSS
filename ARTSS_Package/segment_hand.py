@@ -12,6 +12,14 @@ class SegmentHand:
 
         # Perform hand segmentation using the loaded model
         predicted_mask = self.model.predict(img)[0]
-        predicted_mask = (predicted_mask > 0.5).astype(np.uint8) * 255
+        predicted_mask = (predicted_mask > 0.6).astype(np.uint8) * 255
 
         return predicted_mask
+
+# Example usage:
+#model_path = 'model.h5'  # Replace this with your actual model path
+#hand_segmentation = SegmentHand(model_path)
+
+# Assuming 'input_image' contains the image you want to segment
+# result_mask will contain the segmented hand mask
+#result_mask = hand_segmentation.segment_hand(input_image)
