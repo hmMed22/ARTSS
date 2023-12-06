@@ -18,7 +18,7 @@ class Reorient:
         model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
         return model
 
-    def reorient_image(self, image):
+    def angle_image(self, image):
         img = cv2.resize(image, (224, 224))  # Resize the image to fit ResNet input
         img = np.expand_dims(img, axis=0)
         img = img.astype('float32') / 255
@@ -27,11 +27,10 @@ class Reorient:
         orientation_probabilities = self.model.predict(features)
         predicted_orientation = np.argmax(orientation_probabilities, axis=1)[0]
 
-       
-
         return predicted_orientation
 
-    def rotate_image(self, image, angle):
+    def rotate_image(self, image):
+        angle = self.angle_image(image)
         # Calculate the necessary rotation to bring the image to the desired 90-degree orientation (fingers upward)
         rotation_required = 90 - angle  # Calculate the rotation required from the predicted angle
 
@@ -46,4 +45,3 @@ class Reorient:
             rotated_image = image  # No rotation needed for 0 degrees or multiples of 360
 
         return rotated_image
-
