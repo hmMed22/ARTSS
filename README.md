@@ -7,7 +7,7 @@ ARTSS is a Python package designed for automatically predicting sharp scores on 
 - **Reorientation**: Utilizes ResNet for rotating X-ray images to a 90-degree orientation.
 - **Hand Segmentation**: Uses U-Net for segmenting hands from X-ray images.
 - **Joint Identification**: Implements YOLOv7 for identifying joints in the segmented hand images.
-- **Sharp Score Prediction**: Uses VGG16 for predicting total sharp scores based on identified joints.
+- **Sharp Score Prediction**: Uses VGG16, VGG19, ...,and ViT for predicting total sharp scores based on identified joints.
 
 ## Installation
 
@@ -19,4 +19,4 @@ pip install ARTSS
 
 =======
 # ARTSS
-A reliable automated radiographic total sharp scoring (ARTSS) framework using deep learning for full-hand X-ray images.
+A reliable automated radiographic total sharp scoring (ARTSS) framework using Four-stage deep learning for full-hand X-ray images.
