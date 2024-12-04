@@ -1,4 +1,4 @@
-# ARTSS (Automated Radiographic Tool for Sharp Score prediction)
+# ARTSS (Automated Radiographic Tool for Total Sharp Score prediction)
 
 The ARTSS Python package is an ongoing project aimed at automating the prediction of sharp scores on hand X-ray images. It provides functionality for reorienting images, hand segmentation, joint identification, and total sharp score prediction using deep learning models.
 
